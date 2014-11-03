@@ -53,10 +53,8 @@ class Module implements ModuleDefinitionInterface
 		 */
 		$di['db'] = function() use ($config) {
 			return new DbAdapter(array(
-				"host" => $config->database->host,
-				"username" => $config->database->username,
-				"password" => $config->database->password,
-				"dbname" => $config->database->name
+	    'dbname'     => __DIR__ . '/../db/db.sqlite',
+	    'adapter'		 => 'Sqlite',
 			));
 		};
 
